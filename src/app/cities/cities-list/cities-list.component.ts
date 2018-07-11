@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { City } from "../model/city.model";
+import { CitiesService } from "../service/cities.service";
 
 @Component({
   selector: 'app-cities-list',
@@ -7,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CitiesListComponent implements OnInit {
 
+  currentCity: City;
 
-
-  constructor() { }
+  constructor(private city: CitiesService) { }
 
   ngOnInit() {
+    this.city.getCityTemp();
+
+    this.city.getCityTempObservable()
+      .subscribe(
+        (data: City) => {
+          this.currentCity = data;
+        }
+      );
   }
 
 }

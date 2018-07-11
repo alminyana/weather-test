@@ -11,11 +11,11 @@ export class City {
     this.main = main;
   }
 
-  private getName(): string {
+  public getName(): string {
     return this.name;
   }
 
-  private getTemp(): number {
+  public get getTemp(): number {
     return this.main.temp;
   }
 
