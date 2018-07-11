@@ -12,28 +12,22 @@ export class CitiesService {
 
   constructor(private http: HttpClient) {  }
 
-  getCityTemp() {
+  getCityTemp(): void {
 
     const url = AppConfig.url + AppConfig.cities[2].id + AppConfig.key;
     //return this.http.get(url, {observe: 'body', responseType: 'json'});
 
     this.http.get(url, {observe: 'body', responseType: 'json'}).subscribe(
       (data) => {
-        console.log('data', data);
-         this.one = data;
-
-         let city: City = new City(this.one['id'], this.one['name'], this.one['main']);
-
+         let city: City = new City(data['id'], data['name'], data['main']);
          console.log('city', city);
-
-      },
-      (error) => {
-        console.log('error', error);
       }
     );
+  }
 
-
-
+  getCityTempObservable() {
+    const url2 = AppConfig.url + AppConfig.cities[2].id + AppConfig.key;
+    return this.http.get<City>(url2, {observe: 'body', responseType: 'json'});
   }
 
 
