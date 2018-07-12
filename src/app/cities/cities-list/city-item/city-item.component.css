@@ -2,6 +2,22 @@
   font-size: 1.2em;
 }
 
+.one-city {
+  padding: 1.5em;
+}
+
 .button-icon {
   margin-left: .5em;
+}
+
+.active-city {
+  background-color: rgba(0, 0, 0,.3);
+}
+
+.top01 {
+  margin-top: 1em;
+}
+
+.active-city .temp {
+  color:#fff;
 }
