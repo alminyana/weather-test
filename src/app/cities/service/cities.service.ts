@@ -8,31 +8,26 @@ import { Main } from "../model/main.model";
 @Injectable()
 export class CitiesService {
 
-  one: any;
-
   constructor(private http: HttpClient) {  }
 
-  getCityTemp(): void {
-
-    const url: string = AppConfig.singleCityUrl + AppConfig.cities[2].id + AppConfig.key;
-    //return this.http.get(url, {observe: 'body', responseType: 'json'});
-
-    this.http.get(url, {observe: 'body', responseType: 'json'}).subscribe(
-      (data) => {
-         let city: City = new City(data['id'], data['name'], data['main']);
-         console.log('city', city);
-         return city;
-      }
-    );
-  }
-
-  getCityTempObservable() {
+  getCityTempObservable(): Observable<City> {
+    this.concatCities(AppConfig.cities);
     const url: string = AppConfig.singleCityUrl + AppConfig.cities[2].id + AppConfig.key;
     return this.http.get<City>(url, {observe: 'body', responseType: 'json'});
   }
 
-  getAllDesiredCities() {
-    const url: string = '';
+  getAllDesiredCities(): Observable<City[]> {
+    const url: string = AppConfig.groupCityUrl + this.concatCities(AppConfig.cities) + AppConfig.key;
+    return this.http.get<City[]>(url, {observe: 'body', responseType: 'json'});
+
+  }
+
+  concatCities(cities: {name:string, id: number}[]): string {
+    let concat: string = '';
+    for (let city of cities) {
+      concat += city.id + ',';
+    }
+    return concat.slice(0, -1);
   }
 
 }

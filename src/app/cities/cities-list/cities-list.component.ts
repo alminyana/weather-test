@@ -9,20 +9,16 @@ import { CitiesService } from "../service/cities.service";
 })
 export class CitiesListComponent implements OnInit {
 
-  //currentCity: City;
-  current: City;
-
+  allCities: City[];
   @Output() currentCity: City;
 
-  constructor(private city: CitiesService) { }
+  constructor(private citySrv: CitiesService) { }
 
   ngOnInit() {
-    this.city.getCityTemp();
-
-    this.city.getCityTempObservable()
+    this.citySrv.getAllDesiredCities()
       .subscribe(
-        (data: City) => {
-          this.currentCity = data;
+        (citiesList: City[]) => {
+          this.allCities = citiesList['list'];
         }
       );
   }
