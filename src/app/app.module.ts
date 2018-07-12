@@ -11,6 +11,7 @@ import { CitiesListComponent } from "./cities/cities-list/cities-list.component"
 import { HeaderComponent } from './header/header.component';
 import { CityItemComponent } from "./cities/cities-list/city-item/city-item.component";
 import { CityDetailComponent } from './cities/cities-list/city-detail/city-detail.component';
+import { CelsiusPipe } from './cities/celsius.pipe';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CityDetailComponent } from './cities/cities-list/city-detail/city-detai
     CitiesListComponent,
     HeaderComponent,
     CityItemComponent,
-    CityDetailComponent
+    CityDetailComponent,
+    CelsiusPipe
   ],
   imports: [
     BrowserModule,
