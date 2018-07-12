@@ -19,6 +19,7 @@ export class CitiesService {
   getAllDesiredCities(): Observable<City[]> {
     const url: string = AppConfig.groupCityUrl + this.concatCities(AppConfig.cities) + AppConfig.key;
     return this.http.get<City[]>(url, {observe: 'body', responseType: 'json'});
+
   }
 
   concatCities(cities: {name:string, id: number}[]): string {

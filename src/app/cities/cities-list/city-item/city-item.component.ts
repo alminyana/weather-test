@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { City } from "../../model/city.model";
 
 @Component({
@@ -6,13 +6,10 @@ import { City } from "../../model/city.model";
   templateUrl: './city-item.component.html',
   styleUrls: ['./city-item.component.css']
 })
-export class CityItemComponent implements OnInit {
+export class CityItemComponent {
 
   @Input() city: City;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
