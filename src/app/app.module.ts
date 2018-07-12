@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CitiesListComponent } from "./cities/cities-list/cities-list.component";
 import { HeaderComponent } from './header/header.component';
 import { CityItemComponent } from "./cities/cities-list/city-item/city-item.component";
+import { CityDetailComponent } from './cities/cities-list/city-detail/city-detail.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { CityItemComponent } from "./cities/cities-list/city-item/city-item.comp
     CitiesComponent,
     CitiesListComponent,
     HeaderComponent,
-    CityItemComponent
+    CityItemComponent,
+    CityDetailComponent
   ],
   imports: [
     BrowserModule,
