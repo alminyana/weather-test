@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
+import { CitiesService } from "../../service/cities.service";
+import { City } from "../../model/city.model";
 
 @Component({
   selector: 'app-city-detail',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CityDetailComponent implements OnInit {
 
-  constructor() { }
+  selectedCity: City = undefined;
+
+  constructor(
+    private route: ActivatedRoute,
+    private citySrv: CitiesService ) { }
 
   ngOnInit() {
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.citySrv.getCityById(+params['id'])
+            .subscribe(
+              (oneCity: City) => {
+                this.selectedCity = oneCity;
+              }
+            );
+
+        }
+      );
   }
 
 }
