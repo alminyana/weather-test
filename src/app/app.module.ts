@@ -9,13 +9,16 @@ import { CitiesComponent } from './cities/cities.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CitiesListComponent } from "./cities/cities-list/cities-list.component";
 import { HeaderComponent } from './header/header.component';
+import { CityItemComponent } from "./cities/cities-list/city-item/city-item.component";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CitiesComponent,
     CitiesListComponent,
-    HeaderComponent
+    HeaderComponent,
+    CityItemComponent
   ],
   imports: [
     BrowserModule,

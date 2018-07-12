@@ -2,7 +2,7 @@ export class AppConfig {
 
   public static key: string = "&appid=4bf0c0449365422e36a0582c746b24d6";
 
-  public static url: string = "http://api.openweathermap.org/data/2.5/weather?id=";
+  public static singleCityUrl: string = "http://api.openweathermap.org/data/2.5/weather?id=";
 
   public static cities: {name: string, id: number}[] = [
     {
@@ -18,19 +18,10 @@ export class AppConfig {
         id: 3936456
     },
     {
-        name: 'Santiago de Compostela',
-        id: 6357346
+        name: 'Santiago',
+        id: 3871336
     },
   ];
 
-
-
-  // getKey(): string {
-  //   return this.key;
-  // }
-  //
-  // getUrl(): string {
-  //   return this.getCityTemp;
-  // }
 
 }

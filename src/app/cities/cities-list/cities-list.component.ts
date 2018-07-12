@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { City } from "../model/city.model";
 import { CitiesService } from "../service/cities.service";
 
@@ -9,7 +9,10 @@ import { CitiesService } from "../service/cities.service";
 })
 export class CitiesListComponent implements OnInit {
 
-  currentCity: City;
+  //currentCity: City;
+  current: City;
+
+  @Output() currentCity: City;
 
   constructor(private city: CitiesService) { }
 
