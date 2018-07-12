@@ -1,11 +1,11 @@
-<div class="row" *ngIf="selectedCity">
+<div class="row top3" *ngIf="selectedCity">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="jumbotron clearfix">
-      <div class="col-xs-6">
+      <div class="col-xs-12 col-md-6">
         <h2 class="text text-danger">{{selectedCity.name}}</h2>
       </div>
 
-      <div class="col-xs-6 top2">
+      <div class="col-xs-12 col-md-6 top2">
         <div class="label label-default min-max">
            Temp
         </div>
@@ -15,16 +15,6 @@
 
     </div>
   </div>
-    <!-- <div class="row">
-      <div class="col-xs-offset-1 col-xs-10">
-
-        <div class="label label-default min-max">
-           Temp
-        </div>
-        <img width="30" src="assets/images/temp-icon.png" alt="">
-        <span class="min-max left1">{{selectedCity.main.temp}}</span>
-      </div>
-    </div> -->
     <div class="row top2">
       <div class="col-xs-offset-1 col-xs-5">
 
@@ -35,18 +25,34 @@
         <span class="min-max left1">{{selectedCity.main.temp_min | celsius}}</span>
       </div>
       <div class="col-xs-offset-1 col-xs-5">
+        <img width="30" src="assets/images/sunrise.png" alt="">
+        <span class="badge badge-default min-max left1">{{selectedCity.sys.sunrise | date: 'hh:mm:ss'}}</span>
+      </div>
+    </div>
+    <div class="row top1">
+      <div class="col-xs-offset-1 col-xs-5">
         <div class="label label-danger min-max">
           Max
         </div>
         <img width="30" src="assets/images/max-icon.png" alt="">
         <span class="min-max left1">{{selectedCity.main.temp_max | celsius}}</span>
       </div>
+
     </div>
     <div class="row top1">
-      <div class="col-xs-offset-1 col-xs-11">
+      <div class="col-xs-offset-1 col-xs-5">
         <div class="label label-warning min-max">Humidity</div>
         <img width="30" src="assets/images/humidity.png" alt="">
         <span class="min-max left1">{{selectedCity.main.humidity}} %</span>
       </div>
+      <div class="col-xs-6">
+        <button class="btn btn-default btn-block">
+          <span class="glyphicon glyphicon-refresh"></span> Refresh Data
+        </button>
+        <button class="btn btn-default btn-block">
+          <span class="glyphicon glyphicon-refresh"></span> See Map
+        </button>
+      </div>
     </div>
+
 </div>
