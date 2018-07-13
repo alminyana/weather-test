@@ -10,9 +10,8 @@ export class CitiesService {
 
   constructor(private http: HttpClient) {  }
 
-  getCityTempObservable(): Observable<City> {
-    this.concatCities(AppConfig.cities);
-    const url: string = AppConfig.singleCityUrl + AppConfig.cities[2].id + AppConfig.key;
+  getCityById(id: number): Observable<City> {
+    const url: string = AppConfig.singleCityUrl + id + AppConfig.key;
     return this.http.get<City>(url, {observe: 'body', responseType: 'json'});
   }
 

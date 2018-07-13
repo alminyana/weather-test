@@ -3,19 +3,32 @@
     <div class="jumbotron clearfix">
       <div class="col-xs-12 col-md-6">
         <h2 class="text text-danger">{{selectedCity.name}}</h2>
+
       </div>
 
       <div class="col-xs-12 col-md-6 top2">
         <div class="label label-default min-max">
            Temp
         </div>
-        <img width="30" src="assets/images/temp-icon.png" alt="">
+        <img width="30" src="assets/images/temp-icon.png" alt="" />
         <span class="min-max left1">{{selectedCity.main.temp | celsius }}</span>
+        <div class="top1">
+          <code>
+            {{selectedCity.dt *1000| date: 'd-MMM-y, h:mm:ss a'}}
+          </code>
+        </div>
       </div>
 
     </div>
   </div>
-    <div class="row top2">
+  <div class="row" *ngIf="!loaded">
+    <div class="col-xs-offset-5 col-xs-2 col-sm-offset-5 col-sm2 col-md-offset-5 col-md-2 col-lg-offset-5 col-lg-2">
+      <ul class="list-group top4">
+        <span class="glyphicon glyphicon-refresh refreshing"></span>
+      </ul>
+    </div>
+  </div>
+    <div class="row top2" *ngIf="loaded">
       <div class="col-xs-offset-1 col-xs-5">
 
         <div class="label label-primary min-max">
@@ -26,7 +39,7 @@
       </div>
       <div class="col-xs-offset-1 col-xs-5">
         <img width="30" src="assets/images/sunrise.png" alt="">
-        <span class="badge badge-default min-max left1">{{selectedCity.sys.sunrise | date: 'hh:mm:ss'}}</span>
+        <span class="badge badge-default min-max left1">{{selectedCity.sys.sunrise | date: 'h:mm:ss a'}}</span>
       </div>
     </div>
     <div class="row top1">
@@ -46,7 +59,7 @@
         <span class="min-max left1">{{selectedCity.main.humidity}} %</span>
       </div>
       <div class="col-xs-6">
-        <button class="btn btn-default btn-block">
+        <button class="btn btn-default btn-block" (click)="refreshDetail()">
           <span class="glyphicon glyphicon-refresh"></span> Refresh Data
         </button>
         <button class="btn btn-default btn-block">
