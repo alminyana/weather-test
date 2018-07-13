@@ -11,6 +11,7 @@ import { City } from "../../model/city.model";
 })
 export class CityDetailComponent implements OnInit {
 
+  loaded: boolean = false;
   selectedCity: City = undefined;
 
   constructor(
@@ -18,6 +19,10 @@ export class CityDetailComponent implements OnInit {
     private citySrv: CitiesService ) { }
 
   ngOnInit() {
+    this.getDetailCityById();
+  }
+
+  getDetailCityById() {
     this.route.params
       .subscribe(
         (params: Params) => {
@@ -25,11 +30,17 @@ export class CityDetailComponent implements OnInit {
             .subscribe(
               (oneCity: City) => {
                 this.selectedCity = oneCity;
+                this.loaded = true;
               }
             );
 
         }
       );
+  }
+
+  refreshDetail() {
+    this.loaded = false;
+    this.getDetailCityById();
   }
 
 }

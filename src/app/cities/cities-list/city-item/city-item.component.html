@@ -1,14 +1,17 @@
 <li class="list-group-item one-city" routerLinkActive="active-city">
-  <div class="row">
-    <div class="col-xs-8">
-      <div class="label label-default city-name">
-        {{city.name}}
+  <a href="#" [routerLink]="[city.id]">
+    <div class="row">
+      <div class="col-xs-10">
+        <div class="label label-default city-name">
+          {{city.name}}
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <span class="glyphicon glyphicon-menu-up"></span>
+        <!-- <a class="btn btn-primary btn-xs">
+        Detail <span class="glyphicon glyphicon-eye-open button-icon"></span>
+      </a> -->
       </div>
     </div>
-    <div class="col-xs-4">
-      <a [routerLink]="[city.id]" class="btn btn-primary btn-xs">
-      Detail <span class="glyphicon glyphicon-eye-open button-icon"></span>
-    </a>
-    </div>
-  </div>
+  </a>
 </li>
