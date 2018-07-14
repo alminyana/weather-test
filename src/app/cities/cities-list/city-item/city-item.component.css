@@ -1,0 +1,40 @@
+.city-name {
+  font-size: 1.2em;
+}
+
+.one-city {
+  padding: 1.5em;
+}
+
+.one-city:hover {
+  cursor:pointer;
+}
+
+.button-icon {
+  margin-left: .5em;
+}
+
+.active-city {
+  background-color: rgba(0, 0, 0,.2);
+  font-weight: bold;
+}
+
+.top01 {
+  margin-top: 1em;
+}
+
+.active-city .temp {
+  color:#fff;
+}
+
+.glyphicon {
+  font-size: 25px;
+  color: #000;
+}
+
+.active-city .glyphicon {
+  color: #fff;
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
