@@ -2,6 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { City } from "../model/city.model";
 import { CitiesService } from "../service/cities.service";
 import { Observable } from 'rxjs';
+import { LocalStorageService } from "../service/localStoreage-service";
 
 @Component({
   selector: 'app-cities-list',
@@ -16,7 +17,7 @@ export class CitiesListComponent implements OnInit {
 
   @Output() currentCity: City;
 
-  constructor(private citySrv: CitiesService) { }
+  constructor(private citySrv: CitiesService, private localSrv: LocalStorageService) { }
 
   ngOnInit() {
     this.getCitiesOnce();
@@ -29,6 +30,7 @@ export class CitiesListComponent implements OnInit {
         (cities: City[]) => {
           this.allCities = cities['list'];
           this.loaded = true;
+          this.localSrv.saveData(this.allCities);
         }
       );
   }
@@ -44,6 +46,7 @@ export class CitiesListComponent implements OnInit {
         (citiesList: City[]) => {
               this.allCities = citiesList['list'];
               this.loaded = true;
+              this.localSrv.updateData(this.allCities);
           }
       );
   }

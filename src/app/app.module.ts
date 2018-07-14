@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { CityItemComponent } from "./cities/cities-list/city-item/city-item.component";
 import { CityDetailComponent } from './cities/cities-list/city-detail/city-detail.component';
 import { CelsiusPipe } from './cities/celsius.pipe';
+import { LocalStorageService } from './cities/service/localStoreage-service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { CelsiusPipe } from './cities/celsius.pipe';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CitiesService],
+  providers: [CitiesService, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
