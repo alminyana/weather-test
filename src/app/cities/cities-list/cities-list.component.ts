@@ -10,17 +10,27 @@ import { Observable } from 'rxjs';
 })
 export class CitiesListComponent implements OnInit {
 
-  interval: number = 1000 * 10;
+  interval: number = 1000 * 5;
   loaded: boolean = false;
   allCities: City[];
-  countDown: number = this.interval;
+
   @Output() currentCity: City;
 
   constructor(private citySrv: CitiesService) { }
 
   ngOnInit() {
+    this.getCitiesOnce();
     this.getCities();
-    //this.showCounter();
+  }
+
+  getCitiesOnce() {
+    this.citySrv.getAllDesiredCities()
+      .subscribe(
+        (cities: City[]) => {
+          this.allCities = cities['list'];
+          this.loaded = true;
+        }
+      );
   }
 
   getCities(): void {
@@ -36,15 +46,6 @@ export class CitiesListComponent implements OnInit {
               this.loaded = true;
           }
       );
-  }
-
-  showCounter() {
-    const counter: Observable<number> = Observable.interval(1000);
-    counter.subscribe(
-      (number: number) => {
-        this.countDown -= number;
-      }
-    );
   }
 
   onRefreshData():void {
