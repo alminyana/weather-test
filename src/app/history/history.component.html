@@ -4,8 +4,13 @@
   </h2>
 </div>
 
-<div *ngFor="let lima of allLima">
-  {{ lima }}
+<div class="panel panel-default">
+  <div class="panel-head">
+
+  </div>
+</div>
+<div *ngFor="let lima of histLima">
+  {{ lima | json }}
 </div>
 
 <ul class="list-group">

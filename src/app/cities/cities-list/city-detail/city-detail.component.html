@@ -1,8 +1,8 @@
-<div class="row top3" *ngIf="selectedCity">
+<div class="row top7" *ngIf="selectedCity">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div class="jumbotron clearfix">
+    <div class="jumbotron clearfix no-padding-top no-padding-bottom">
       <div class="col-xs-12 col-md-6">
-        <h2 class="text text-danger">{{selectedCity.name}}</h2>
+        <h2 class="text text-danger city-title">{{selectedCity.name}}</h2>
       </div>
 
       <div class="col-xs-12 col-md-6 top2" *ngIf="loaded">
