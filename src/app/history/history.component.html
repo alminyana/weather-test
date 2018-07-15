@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h2 class="text text-primary">
+    Historical temperature <small>By City</small>
+  </h2>
+</div>
+
+<div *ngFor="let lima of allLima">
+  {{ lima }}
+</div>
+
+<ul class="list-group">
+  <app-history-item [oneItem]="one" *ngFor="let one of history"></app-history-item>
+</ul>
