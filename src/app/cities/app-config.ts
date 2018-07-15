@@ -8,7 +8,7 @@ export class AppConfig {
 
   static readonly cities: {name: string, id: number}[] = [
     {
-        name: 'Sao Paolo',
+        name: 'Sao Paulo',
         id: 3448439
     },
     {
@@ -25,5 +25,10 @@ export class AppConfig {
     },
   ];
 
+  static readonly time = {
+    secondsPerMinute: 60,
+    miliseconds: 1000,
+    numberOfMinutes: 3
+  }
 
 }

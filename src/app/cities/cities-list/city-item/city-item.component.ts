@@ -10,6 +10,5 @@ export class CityItemComponent {
 
   @Input() city: City;
 
-  constructor() { }
 
 }

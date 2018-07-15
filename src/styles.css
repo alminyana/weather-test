@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+.city-title {
+  font-family: 'Monoton';
+}
 
 .left1 {
   margin-left: 1em;
@@ -43,6 +46,14 @@
 
 .top5 {
   margin-top: 5em;
+}
+
+.top6 {
+  margin-top: 6em;
+}
+
+.top7 {
+  margin-top: 7em;
 }
 
 /*  Spinner animation  */
