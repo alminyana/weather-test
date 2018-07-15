@@ -3,6 +3,7 @@ import { City } from "../model/city.model";
 import { CitiesService } from "../service/cities.service";
 import { Observable } from 'rxjs';
 import { LocalStorageService } from "../service/localStoreage-service";
+import { RefreshService } from "../service/refresh.service";
 
 @Component({
   selector: 'app-cities-list',
@@ -17,7 +18,9 @@ export class CitiesListComponent implements OnInit {
 
   @Output() currentCity: City;
 
-  constructor(private citySrv: CitiesService, private localSrv: LocalStorageService) { }
+  constructor(private citySrv: CitiesService,
+              private localSrv: LocalStorageService,
+              private refreshSrv: RefreshService) { }
 
   ngOnInit() {
     this.getCitiesOnce();
@@ -53,6 +56,7 @@ export class CitiesListComponent implements OnInit {
 
   onRefreshData():void {
     this.loaded = false;
+    this.refreshSrv.refreshData.next(true);
     this.getCities();
   }
 
