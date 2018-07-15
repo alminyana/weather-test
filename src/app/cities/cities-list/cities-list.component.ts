@@ -4,6 +4,8 @@ import { CitiesService } from "../service/cities.service";
 import { Observable } from 'rxjs';
 import { LocalStorageService } from "../service/localStoreage-service";
 import { RefreshService } from "../service/refresh.service";
+import { AppConfig } from '../app-config';
+
 
 @Component({
   selector: 'app-cities-list',
@@ -12,7 +14,7 @@ import { RefreshService } from "../service/refresh.service";
 })
 export class CitiesListComponent implements OnInit {
 
-  interval: number = 1000 * 5;
+  interval: number = AppConfig.time.miliseconds * AppConfig.time.numberOfMinutes * AppConfig.time.secondsPerMinute;
   loaded: boolean = false;
   allCities: City[];
 
@@ -57,7 +59,7 @@ export class CitiesListComponent implements OnInit {
   onRefreshData():void {
     this.loaded = false;
     this.refreshSrv.refreshData.next(true);
-    this.getCities();
+    this.getCitiesOnce();
   }
 
 }

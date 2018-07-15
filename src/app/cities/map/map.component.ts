@@ -21,7 +21,18 @@ export class MapComponent implements OnInit {
   constructor( private refreshSrv: RefreshService) { }
 
   ngOnInit() {
-    console.log(this.coords);
+    this.createMap();
+
+    this.refreshSrv.refreshMap
+      .subscribe(
+        (data: any) => {
+          this.map.setCenter({lat:data.lat, lng:data.lon});
+        }
+      );
+
+  }
+
+  createMap() {
     let mapProp = {
       center: new google.maps.LatLng(this.coords.lat, this.coords.lon ),
       zoom: 13,
@@ -29,17 +40,8 @@ export class MapComponent implements OnInit {
       disableDefaultUI: true,
       clickableIcons: false
     };
+
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-
-
-    this.refreshSrv.refreshMap
-      .subscribe(
-        (data: any) => {
-          console.log('from map::', data);
-          this.map.setCenter({lat:data.lat, lng:data.lon});
-        }
-      );
-
   }
 
 }

@@ -25,5 +25,10 @@ export class AppConfig {
     },
   ];
 
+  static readonly time = {
+    secondsPerMinute: 60,
+    miliseconds: 1000,
+    numberOfMinutes: 3
+  }
 
 }
