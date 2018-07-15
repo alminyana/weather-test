@@ -1,0 +1,4 @@
+.history-box {
+  max-height: 380px;
+  overflow-y: scroll;
+}

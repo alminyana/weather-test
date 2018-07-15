@@ -6,5 +6,5 @@ export class Coordinates {
     this.lat = lat;
     this.long = long;
   }
-  
+
 }
