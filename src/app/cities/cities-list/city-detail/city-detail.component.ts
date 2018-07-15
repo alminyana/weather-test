@@ -37,6 +37,7 @@ export class CityDetailComponent implements OnInit {
   }
 
   getDetailCityById() {
+    this.selectedCity =undefined;
     this.route.params
       .subscribe(
         (params: Params) => {
@@ -45,6 +46,7 @@ export class CityDetailComponent implements OnInit {
               (oneCity: City) => {
                 this.selectedCity = oneCity;
                 this.loaded = true;
+                this.refreshSrv.refreshMap.next(this.selectedCity['coord']);
               }
             );
 
