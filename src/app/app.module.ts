@@ -16,6 +16,7 @@ import { LocalStorageService } from './cities/service/localStoreage-service';
 import { HistoryComponent } from './history/history.component';
 import { HistoryItemComponent } from './history/history-item/history-item.component';
 import { RefreshService } from './cities/service/refresh.service';
+import { MapComponent } from './cities/map/map.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { RefreshService } from './cities/service/refresh.service';
     CityDetailComponent,
     CelsiusPipe,
     HistoryComponent,
-    HistoryItemComponent
+    HistoryItemComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

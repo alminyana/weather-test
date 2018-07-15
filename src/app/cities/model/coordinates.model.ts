@@ -1,10 +1,10 @@
 export class Coordinates {
-  private lat: number;
-  private long: number;
+  readonly lat: number;
+  readonly lon: number;
 
-  constructor (lat: number, long: number) {
+  constructor (lat: number, lon: number) {
     this.lat = lat;
-    this.long = long;
+    this.lon = lon;
   }
 
 }
