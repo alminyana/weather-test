@@ -13,6 +13,8 @@ import { CityItemComponent } from "./cities/cities-list/city-item/city-item.comp
 import { CityDetailComponent } from './cities/cities-list/city-detail/city-detail.component';
 import { CelsiusPipe } from './cities/celsius.pipe';
 import { LocalStorageService } from './cities/service/localStoreage-service';
+import { HistoryComponent } from './history/history.component';
+import { HistoryItemComponent } from './history/history-item/history-item.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { LocalStorageService } from './cities/service/localStoreage-service';
     HeaderComponent,
     CityItemComponent,
     CityDetailComponent,
-    CelsiusPipe
+    CelsiusPipe,
+    HistoryComponent,
+    HistoryItemComponent
   ],
   imports: [
     BrowserModule,
