@@ -4,15 +4,51 @@
   </h2>
 </div>
 
-<div class="panel panel-default">
-  <div class="panel-head">
+<h3 class="text text-danger">
+  <span class="city-title">
+    Lima
+  </span>
+</h3>
 
+<div class="panel panel-default">
+  <div class="panel-body">
+    <app-history-item [oneItem]="lima" *ngFor="let lima of histLima"></app-history-item>
   </div>
 </div>
-<div *ngFor="let lima of histLima">
-  {{ lima | json }}
+
+
+<h3 class="text text-danger">
+  <span class="city-title">
+    Buenos Aires
+  </span>
+</h3>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <app-history-item [oneItem]="buenos" *ngFor="let buenos of histBuenos"></app-history-item>
+  </div>
 </div>
 
-<ul class="list-group">
-  <app-history-item [oneItem]="one" *ngFor="let one of history"></app-history-item>
-</ul>
+<h3 class="text text-danger">
+  <span class="city-title">
+    Santiago
+  </span>
+</h3>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <app-history-item [oneItem]="santi" *ngFor="let santi of histSantiago"></app-history-item>
+  </div>
+</div>
+
+<h3 class="text text-danger">
+  <span class="city-title">
+    Sao Paolo
+  </span>
+</h3>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <app-history-item [oneItem]="sao" *ngFor="let sao of histSaoPaolo"></app-history-item>
+  </div>
+</div>

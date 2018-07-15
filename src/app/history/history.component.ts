@@ -11,14 +11,23 @@ import { City } from "../cities/model/city.model";
 })
 export class HistoryComponent implements OnInit {
 
-  history: City[];
+  history: City[] = [];
   histLima: City[];
+  histBuenos: City[];
+  histSantiago: City[];
+  histSaoPaolo: City[];
+
   @Output() one: City;
   constructor(private localSrv: LocalStorageService) { }
 
   ngOnInit() {
     this.history = this.localSrv.getData();
-    this.histLima = this.filterByCity(this.history, AppConfig.cities[2].name);
+    if (this.history && this.history.length > 0) {
+      this.histLima = this.filterByCity(this.history, AppConfig.cities[2].name);
+      this.histBuenos = this.filterByCity(this.history, AppConfig.cities[1].name);
+      this.histSaoPaolo = this.filterByCity(this.history, AppConfig.cities[0].name);
+      this.histSantiago = this.filterByCity(this.history, AppConfig.cities[3].name);
+    }
   }
 
   filterByCity(list: City[], cityName: string): City[] {

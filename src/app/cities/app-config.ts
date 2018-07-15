@@ -8,7 +8,7 @@ export class AppConfig {
 
   static readonly cities: {name: string, id: number}[] = [
     {
-        name: 'Sao Paolo',
+        name: 'Sao Paulo',
         id: 3448439
     },
     {

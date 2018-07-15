@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+.city-title {
+  font-family: 'Monoton';
+}
 
 .left1 {
   margin-left: 1em;
