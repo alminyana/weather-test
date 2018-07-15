@@ -15,6 +15,7 @@ import { CelsiusPipe } from './cities/celsius.pipe';
 import { LocalStorageService } from './cities/service/localStoreage-service';
 import { HistoryComponent } from './history/history.component';
 import { HistoryItemComponent } from './history/history-item/history-item.component';
+import { RefreshService } from './cities/service/refresh.service';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { HistoryItemComponent } from './history/history-item/history-item.compon
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CitiesService, LocalStorageService],
+  providers: [CitiesService, LocalStorageService, RefreshService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
