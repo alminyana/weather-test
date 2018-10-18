@@ -26,7 +26,6 @@ import { HistoryModule } from './history/history.module';
     CitiesModule,
     HistoryModule
   ],
-  providers: [CitiesService, LocalStorageService, RefreshService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
