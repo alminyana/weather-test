@@ -8,6 +8,9 @@ import { CityDetailComponent } from './cities-list/city-detail/city-detail.compo
 import { AppRoutingModule } from '../app-routing.module';
 import { MapComponent } from './map/map.component';
 import { CelsiusPipe } from './celsius.pipe';
+import { CitiesService } from './service/cities.service';
+import { LocalStorageService } from './service/localStoreage-service';
+import { RefreshService } from './service/refresh.service';
 
 @NgModule({
     declarations: [
@@ -22,6 +25,7 @@ import { CelsiusPipe } from './celsius.pipe';
         CommonModule,
         AppRoutingModule
     ],
+    providers: [CitiesService, LocalStorageService, RefreshService],
     exports: [
         CelsiusPipe
     ]
