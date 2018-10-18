@@ -8,25 +8,22 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { LocalStorageService } from './cities/service/localStoreage-service';
-import { HistoryComponent } from './history/history.component';
-import { HistoryItemComponent } from './history/history-item/history-item.component';
 import { RefreshService } from './cities/service/refresh.service';
 
 import { CitiesModule } from './cities/cities.module';
-
+import { HistoryModule } from './history/history.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HistoryComponent,
-    HistoryItemComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CitiesModule
+    CitiesModule,
+    HistoryModule
   ],
   providers: [CitiesService, LocalStorageService, RefreshService],
   bootstrap: [AppComponent]
